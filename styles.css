@@ -1,0 +1,261 @@
+* {
+    --main-background-color: rgb(165, 95, 42);
+    --alternate-background-color: rgba(0,0,0,0.5);
+    --main-font-color: white;
+    --alternate-font-color: rgb(209, 121, 55);
+    --border-color: rgb(112, 49, 0);
+    --border-pattern: 3px solid var(--border-color);
+    margin: auto 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+p, h1, h2 {
+    color: var(--alternate-font-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-font-color);
+}
+
+#navigation {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 72.50%;
+    background-color: var(--alternate-background-color);
+    z-index: 100;
+    transform: translateX(-95%);
+    transition: transform ease-in 0.5s;
+}
+
+#navigation:hover {
+    transform: translateX(0%);
+}
+
+#navigation p {
+    color: var(--main-font-color);
+    background-color: var(--main-background-color);
+    padding: 7.5% 5%;
+    margin: 6%;
+    text-align: center;
+    font-size: 135%;
+    border: var(--border-pattern);
+    transition: background-color 0.25s;
+}
+
+#navigation p:hover, #navigation p:active:after {
+    background-color: var(--border-color);
+}
+
+#navigation, #navigation p {
+    border-radius: 10px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.title h1 {
+    padding-top: 20%;
+    padding-bottom: 25%;
+
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-size: 400%;
+    color: var(--main-font-color);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#indonesia-title {
+    background-image: url("./images/titleBali.jpg");
+}
+
+#yogyakarta-title {
+    background-image: url("./images/titleyogha.jpg");
+}
+
+#bali-title {
+    background-image: url("./images/templeGate.jpg");
+}
+
+#about {
+    border: var(--border-pattern);
+    margin: 10% 15%;
+    padding: 5% 10%;
+    border-radius: 10px;
+}
+
+#about, #copyright {
+    padding: 2.5%;
+    text-align: center;
+}
+
+#about h1 {
+    font-size: 360%;
+}
+
+.title, .image-inner-container{
+    width: 100%;
+}
+
+.flower {
+    width: 5%;
+    display: block;
+    margin: 0% auto;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%; 
+    animation: rotate 3s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.title img, .image-inner-container img, #menu-icon img, .flower img {
+    width: 100%; 
+    display: block;
+    transition: width 2s;
+}
+
+.image-inner-container {
+    border: var(--border-pattern);
+    border-radius: 15px;
+}
+
+.image-inner-container img {
+    padding: 1%;
+    border-radius: 20px;
+    position: relative;
+}
+
+.description-inner-container {
+    z-index: 25;
+    position: relative;
+    top: -135px;
+    padding: 2%;
+    margin-left: 15%;
+    margin-bottom: -5%;
+    background-color: rgba(0, 0, 0, 0.752);
+    animation: fade-out ease-out 0.25s forwards;
+    cursor: pointer;
+}
+
+.description-inner-container p {
+    margin-top: 1.5%;
+}
+
+.description-inner-container:hover {
+    animation: fade-in ease-out 0.25s forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    column-gap: 2%;
+    margin: 0% 3%;
+}
+
+footer {
+    background-color: var(--main-background-color);
+}
+
+#copyright p {
+    color: var(--main-font-color);
+}
+
+@media only screen and (max-width: 1150px) and (min-width: 780px) {
+
+    #navigation {
+        right: 70%;
+    }
+
+    #navigation p {
+        font-size: 115%;
+    }
+
+    .title h1 {
+        font-size: 300%;
+    }
+
+    .flower {
+        width: 7.5%;
+    }
+
+    #about h1 {
+        font-size: 260%;
+    }
+}
+
+@media only screen and (max-width: 779px) {
+
+    #navigation {
+        right: 57.5%;
+    }
+
+    #navigation p {
+        font-size: 87.5%;
+    }
+
+    .title h1 {
+        font-size: 200%;
+        padding-top: 35%;
+        padding-bottom: 45%;
+    }
+
+    .flower {
+        width: 10%;
+    }
+
+    #about h1 {
+        font-size: 160%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
